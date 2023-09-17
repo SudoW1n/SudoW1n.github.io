@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ... Previous CSS Code ... */
+
+/* Navbar background transition */
+.navbar-custom {
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s ease; /* Add background color transition */
+    z-index: 3;
+}
+
+.active{
+    background-color: #444;
+    border-radius: 10px;
+}
+
+/* Change background color when the dropdown menu is active */
+.nav-links-custom.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    background-color: #222; /* Change the background color when active */
+}
+
+
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.nav-links-custom {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Center links vertically */
+    font-weight: 800;
+}
+
+.nav-links-custom li {
+    margin-right: 20px;
+}
+
+.nav-links-custom li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px; /* Add padding around each link */
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* ... Previous CSS Code ... */
+
+@media screen and (max-width: 768px) {
+    .nav-links-custom {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #333;
+        z-index: 1;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid #444;
+        opacity: 0;
+        transform: translateY(-100%); /* Initially hide the menu above the viewport */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links-custom.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .burger {
+        display: flex;
+    }
+    
+    .nav-links-custom li {
+        margin: 0;
+    }
+    
+    .nav-links-custom li a {
+        padding: 20px;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-links-custom li a:hover {
+        background-color: #444;
+        border-radius: 10px;
+    }
+}
+
+.nav-links-custom li a:hover{
+    background-color: #444;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+/* Add a collapse animation when the menu is hidden */
+@media screen and (max-width: 768px) {
+    .nav-links-custom.collapsing {
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+}
+
+#Home {
+    /* Set the linear gradient as the background */
+    background: linear-gradient(to left, rgba(15, 15, 15), rgba(25, 29, 31));
+    height: 100vh;
+    position: relative; /* Ensure proper positioning of pseudo-element */
+    overflow: hidden;
+}
+
+
+#Logo{
+    
+    font-weight: 800;
+    color: white;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/* Add this CSS to center-align and left-align the header */
+/* Add this CSS to center-align and left-align the header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85vh;
+    padding-left: 20px;
+    padding-right: 20px; /* Add right padding as needed */
+    background: linear-gradient(to right, #0693E3, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.left-column {
+    flex: 1;
+    padding-right: 20px; /* Add spacing between columns */
+}
+
+.right-column {
+    flex: 1;
+    /* Add styling for the right column here */
+}
+
+
+.header-container h1 {
+    font-size: 36px; /* Adjust the font size as needed */
+    margin-bottom: 10px; /* Adjust the margin as needed */
+    font-weight: 800;
+}
+
+.header-container p {
+    font-size: 15px; /* Adjust the font size as needed */
+    color: white;
+    font-weight: 600;
+    text-transform:none;
+    font-family: 'Poppins',sans-serif;
+}
+
+@media screen and (max-width: 768px){
+    .center-align-content-in-mobile-view{
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 400;
+    }
+    .center-align-in-mobile-view{
+        font-size: 2rem;
+        text-align: center;
+    }
+    .hidden-in-mb{
+        visibility: hidden;
+    }
+}
+
+.image-container {
+    margin-top: 10px; /* Adjust the margin as needed to control the spacing between the content and the image */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove any extra spacing below the image */
+    margin: 0 auto; /* Center-align the image horizontally */
+    border: 2px solid #ccc; /* Add a border to the image (optional) */
+    border-radius: 5px; /* Add rounded corners to the image (optional) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow (optional) */
+}
+
+.sticky-top{
+    position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+}
+
+
+#About{
+    background-color: black;
+    height: 100vh;
+    position: relative; /* Ensure proper positioning of pseudo-element */
+    overflow: hidden;
+}
+
+
+.shrink-text {
+    font-size: 1rem;
+}
+
+/* Media query for screens with a maximum width of 767px (e.g., small screens) */
+@media (max-width: 820px) {
+    .shrink-text {
+        font-size: 0.8rem; /* You can adjust the font size as needed */
+    }
+}
+
+@media (max-width: 767px) {
+    .center-button {
+        text-align: center;
+    }
+}
+
+#Download{
+    background-color: #222;
+    height: auto;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
